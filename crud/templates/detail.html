@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extrahead %} 
+<title>Detalle Producto</title>
+{% endblock extrahead%}
+
+{% block content %}
+    <a class="btn btn-warning" href={% url "index" %}>Regresar</a>
+    <h1> Detalle</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Tipo de carta</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Raza de carta</th>
+                <th scope="col">Atributo</th>
+                <th scope="col">Imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">{{ carta.name }}</th>
+                <td>{{ carta.type }}</td>
+                <td>{{ carta.description }}</td>
+                <td>{{ carta.race }}</td>
+                <td>{{ carta.attribute }}</td>
+                <td><img src="{{ carta.image.url }}" alt="imagen de la carta..."></td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock content%}
